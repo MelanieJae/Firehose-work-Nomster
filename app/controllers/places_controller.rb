@@ -7,7 +7,7 @@ class PlacesController < ApplicationController
 
 	def create
 		current_user.places.create(place_params)
-		Place.create(place_params)
+		#Place.create(place_params)
 		redirect_to root_path	
 	end
 
