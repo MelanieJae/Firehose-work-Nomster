@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 1.2'
 #add autoprefixer according to Bootstrap-sass docs
 gem 'autoprefixer-rails'
 
+#Add pagination gem will_paginate
+gem 'will_paginate', '~> 3.0.5'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
