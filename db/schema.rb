@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20150408193129) do
 
   create_table "places", force: true do |t|
     t.string   "name"
-    t.text     "description"
+    t.string     "description"
     t.string   "address"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -9,12 +9,14 @@
 		<p><%= place.description %></p><br />
 	</div>
 
-	<%-#Apple Store pagination style -%> 
-<div class="apple_pagination">
-		<div class="page_info">
-			<%= page_entries_info @places %>
-		</div>
-	<hr />
+	 
+
+<hr />
 <% end %>
+	
+<%-#Apple Store pagination style -%>
+<div class="apple_pagination">
+	<%= will_paginate @posts, :container => false %>
+</div>
 
 
