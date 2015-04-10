@@ -6,6 +6,9 @@ gem 'rails', '4.0.1'
 #adding booststrap-sass gem
 gem 'bootstrap-sass', '~> 3.3.0'
 
+#adding simple form gem for app forms
+gem 'simple_form'
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 
