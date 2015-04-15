@@ -1,6 +1,7 @@
 class Place < ActiveRecord::Base
-	self.per_page = 1
+	#self.per_page = 1
 	belongs_to :user
+	validates :name, :presence => true
 end
 
 
