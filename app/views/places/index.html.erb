@@ -4,7 +4,7 @@
 
 <% @places.each do |place| %>
 	<div class="place-box col-xs-10 col-xs-offset-1">
-		<h3><%= place.name %></h3><br />
+		<h3><%= link_to place.name, place_path(place) %></h3><br />
 		<i><%= place.address %></i><br /><br />
 		<p><%= place.description %></p><br />
 	
