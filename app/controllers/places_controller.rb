@@ -1,6 +1,6 @@
 class PlacesController < ApplicationController
 	#adding a before filter so that only authenticated users can create new places"
-		before_action :authenticate_user!, :only => [:new, :create, :edit, :update]
+		before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
 	def index
 		@places = Place.all.paginate(:page => params[:page], per_page: 3)
 	end
@@ -38,6 +38,9 @@ class PlacesController < ApplicationController
 
 	def destroy
 		@place = Place.find(params[:id])
+		if @place.user != current_user
+			return render :text => 'Not Allowed', :status => :forbidden
+		end
 		@place.destroy
 		redirect_to root_path
 	end
