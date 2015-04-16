@@ -47,6 +47,13 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+#geocoding gem for map integration
+gem 'geocoder'
+
+#adding Figaro gem to add values to environmental variable
+#that hides true Geocoding API key
+gem 'figaro', '>= 1.0.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
