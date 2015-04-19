@@ -8,4 +8,5 @@ class Place < ActiveRecord::Base
 	validates :description, :presence => true
 end
 
+	
 
