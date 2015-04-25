@@ -54,6 +54,8 @@ gem 'geocoder'
 #that hides true Geocoding API key
 gem 'figaro', '>= 1.0.0'
 
+#adding carrierwave for image uploads
+gem 'carrierwave'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
