@@ -56,6 +56,13 @@ gem 'figaro', '>= 1.0.0'
 
 #adding carrierwave for image uploads
 gem 'carrierwave'
+
+#adding fog gem for carrierwave gem to communicate w/AWS
+gem 'fog', '~> 1.3.1'
+
+# Minimagick gem for overcoming resizing issues when uploading images
+gem 'mini_magick'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

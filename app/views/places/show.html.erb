@@ -66,21 +66,18 @@
 <div class="clear"></div> 
 
   <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
-    <%= f.input :caption %>  
+    <%= f.input :caption %> 
+    <%= f.input :picture %>
     <%= f.submit "Upload image", :class => 'btn btn-primary' %>
   <% end %>
 
-<% @place.photos.each do |photo| %>
+<%= @place.photos.each do |photo| %>
   <div class="col-xs-12 col-sm-6">
-    <blockquote>
-        <b><%= photo.caption %></b> -
-      <% end %>
-      <%-#= photo.picture #-%>
-      <small><%= photo.user.email %></small>
-    </blockquote>
+        <b><%= image_tag photo.picture %></b>
+        <b><%= photo.caption %></b>
   </div>
 <% end %>
-
+  
 <br />
   <% if false %>
   <button type="button" class="btn btn-primary btn-md pull-right">Add an image</button>
@@ -88,6 +85,10 @@
   <% end %>
 </div>
 
+<% @place.photos.each do |photo| %>
+  <%= image_tag photo.picture %>
+  <%= photo.caption %>
+<% end %>
 <!-- Modal for comments-->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
