@@ -12,6 +12,6 @@ class PhotosController < ApplicationController
 	#pulls data out of photo upload form
 
 	def photo_params
-		params.require(:photo).permit(:caption, :picture, :string)
+		params.require(:photo).permit(:caption, :picture)
 	end	
 end

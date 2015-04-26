@@ -93,6 +93,7 @@ GEM
     orm_adapter (0.5.0)
     pg (0.18.1)
     polyglot (0.3.5)
+    psych (2.0.13)
     rack (1.5.2)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -166,6 +167,7 @@ DEPENDENCIES
   jquery-rails
   mini_magick
   pg
+  psych (= 2.0.13)
   rails (= 4.0.1)
   sass-rails (~> 4.0.0)
   sdoc

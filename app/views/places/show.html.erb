@@ -4,6 +4,7 @@
 	<br/><br/>
 	<p><%= @place.description %></p>
 
+<%-#----- PLACE MAP -------#-%>
   <% if @place.latitude.present? && @place.longitude.present? %>
    
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
@@ -31,6 +32,7 @@
   <% end %>
   <br />
 
+<%-#-----EDIT AND DESTROY BUTTONS FOR PLACE------#-%>
   <div class="pull-right">
 	   <% if current_user && current_user == @place.user %>
 			   <%= link_to 'Edit', edit_place_path(@place), :class => 'btn btn-primary' %>
@@ -41,7 +43,7 @@
   <div class='clear'></div>
   <br />
 
-<%-# COMMENT BUTTON #-%>
+<%-#----ADD A COMMENT BUTTON -------------#-%>
 <!-- Button trigger modal for comment button-->
   
   <button class="btn btn-primary btn-md pull-right" data-toggle="modal" data-target="#myModal">
@@ -49,9 +51,9 @@
   </button>
   <div class="clear"></div>  
 
-<!-- end modal button trigger-->  
+ 
   
-
+<%-# ---PRINTS OUT EACH COMMENT IN ITS OWN BOX WITH LARGE OPEN QUOTE---- #-%>
 <% @place.comments.each do |comment| %>
   <div class="col-xs-12 col-sm-6">
     <blockquote>
@@ -65,30 +67,23 @@
 <% end %>
 <div class="clear"></div> 
 
-  <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
-    <%= f.input :caption %> 
-    <%= f.input :picture %>
+<%-#----FORM FOR UPLOADING A PHOTO----#-%>
+<%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
+  <%= f.input :caption %> 
+  <%= f.input :picture %>
+  <div class="pull-right">
     <%= f.submit "Upload image", :class => 'btn btn-primary' %>
+  </div>
   <% end %>
 
-<%= @place.photos.each do |photo| %>
-  <div class="col-xs-12 col-sm-6">
-        <b><%= image_tag photo.picture %></b>
-        <b><%= photo.caption %></b>
-  </div>
+<% @place.photos.each do |photo| %>
+    <b><%= image_tag place.photo.picture %></b>
+    <b><%= place.photo.caption %></b>
 <% end %>
   
 <br />
-  <% if false %>
-  <button type="button" class="btn btn-primary btn-md pull-right">Add an image</button>
-  <div class="clear"></div>
-  <% end %>
 </div>
 
-<% @place.photos.each do |photo| %>
-  <%= image_tag photo.picture %>
-  <%= photo.caption %>
-<% end %>
 <!-- Modal for comments-->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">

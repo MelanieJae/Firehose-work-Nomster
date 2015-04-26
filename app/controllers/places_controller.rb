@@ -22,14 +22,8 @@ class PlacesController < ApplicationController
 		@place = Place.find(params[:id])
 		@comment = Comment.new
 		@photo = Photo.new
-	end
-
-	def edit
-		@place = Place.find(params[:id])
-		#secure the edit page so others can't shortcut into
-		#the edit form without signing up or in
 		if @place.user != current_user
-			return render :text => 'Not Allowed', :status => :forbidden
+		return render :text => 'Not Allowed', :status => :forbidden
 		end
 	end
 
