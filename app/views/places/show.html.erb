@@ -65,6 +65,7 @@
     </blockquote>
   </div>
 <% end %>
+
 <div class="clear"></div> 
 
 <%-#----FORM FOR UPLOADING A PHOTO----#-%>
@@ -77,8 +78,8 @@
   <% end %>
 
 <% @place.photos.each do |photo| %>
-    <b><%= image_tag place.photo.picture %></b>
-    <b><%= place.photo.caption %></b>
+    <b><%= image_tag photo.picture %></b>
+    <b><%= photo.caption %></b>
 <% end %>
   
 <br />
