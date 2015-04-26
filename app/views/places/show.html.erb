@@ -75,15 +75,18 @@
   <div class="pull-right">
     <%= f.submit "Upload image", :class => 'btn btn-primary' %>
   </div>
-  <% end %>
-
-<% @place.photos.each do |photo| %>
-    <b><%= image_tag photo.picture %></b>
-    <b><%= photo.caption %></b>
-<% end %>
-  
+  <% end %>  
 <br />
 </div>
+
+<% @place.photos.each do |photo| %>
+   <div class="col-xs-12 col-sm-6">
+      <blockquote>
+        <b><%= image_tag photo.picture %></b><br />
+        <b><%= photo.caption %></b>
+      </blockquote>
+    </div>
+<% end %>
 
 <!-- Modal for comments-->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
