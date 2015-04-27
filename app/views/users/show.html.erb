@@ -1,8 +1,16 @@
 <h3>User Dashboard</h3>
 <br />
-<h1><%= @user.email %></h1>
-<br />
-<h3>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h3><br />
-<h3>Has left <%= @user.comments.count %> comments</h3>
-<h3>Has given <%= @user.comments.where(:rating => '5_stars').count %> 5-star reviews </h3>
 
+<div class="user-box">
+	<div class="col-xs-4">
+		<%= image_tag 'user.png' %>	
+	</div>
+	<div class="col-xs-8">
+		<h1><%= @user.email %></h1>
+		<br />
+		<h1>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h1><br />
+		<h3>Has left <%= @user.comments.count %> comments</h3>
+		<h3>Has given <%= @user.comments.where(:rating => '5_stars').count %> 5-star reviews </h3>
+	</div>
+	<div class="clear"></div>
+</div>
