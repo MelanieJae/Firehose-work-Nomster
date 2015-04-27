@@ -25,6 +25,24 @@
 	    </blockquote>
   	</div>
 <% end %>
+<div class="clear"></div>
+<br /><br />
+<h2 class="text-center">Places I have recently visited</h2>
+<br /><br />
+<% @user.places.each do |place| %>
+	<% if place.comments.present? %>
+			<div class="col-xs-12">
+    			<%= place.name %><br />
+      			<blockquote>
+      				<% if place.comments.last.humanized_rating.present? %>
+        				<b><%= place.comments.last.humanized_rating %></b> -
+      				<% end %>
+      				<%= place.comments.last.message %></div>
+      			</blockquote>
+			</div>
+	<% end %>
+<% end %>
+
 
 
 
