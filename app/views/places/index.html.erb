@@ -55,14 +55,12 @@
       				<% if place.comments.last.humanized_rating.present? %>
         				<b><%= place.comments.last.humanized_rating %></b> -
       				<% end %>
-      				<%= place.comments.last.message %></div>
-      			</blockquote>
+      				<%= place.comments.last.message %>
+      		</blockquote>
       </div>
-    </div>
-    <% end %>
-  
+  </div>
+<% end %>     
       
-<% end %>
 
 <%-#Apple Store pagination style -%>
 <div class="col-xs-12 apple_pagination">
