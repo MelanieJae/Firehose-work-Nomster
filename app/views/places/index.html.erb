@@ -56,10 +56,10 @@
       			</blockquote>
       </div>
     <% end %>
-    <% if place.photos.present? %>
+    <div class="clear"></div>
+      <% if place.photos.present? %>
         <%= image_tag place.photos.last.picture %></b> -
-    <% end %>
-  </div>
+      <% end %>
 <% end %>
 
 <%-#Apple Store pagination style -%>
