@@ -78,13 +78,11 @@
   <% end %>  
 <br />
 </div>
-<div class="col-xs-12 col-sm-6">
-  <% @place.photos.each do |photo| %>
-      <b><%= image_tag photo.picture %></b><br /><br />
-      <b><%= photo.caption %></b>
-    </style>
-<% end %>
 
+<% @place.photos.each do |photo| %>
+  <b><%= image_tag photo.picture %></b><br /><br />
+  <b><%= photo.caption %></b>
+<% end %>
 
 <!-- Modal for comments-->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
