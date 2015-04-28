@@ -46,6 +46,10 @@
 			<small><%= place.user.email %></small>
 		<% end %>
 
+    <% if place.photos.present? %>
+        <%= image_tag place.photos.last.picture %></b> -
+    <% end %>
+
 		<% if place.comments.present? %>
 			<div class="col-xs-12">
     			<blockquote>
@@ -56,10 +60,8 @@
       			</blockquote>
       </div>
     <% end %>
-    <div class="clear"></div>
-      <% if place.photos.present? %>
-        <%= image_tag place.photos.last.picture %></b> -
-      <% end %>
+  
+      
 <% end %>
 
 <%-#Apple Store pagination style -%>
