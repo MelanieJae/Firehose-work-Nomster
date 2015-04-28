@@ -52,13 +52,15 @@
       				<% if place.comments.last.humanized_rating.present? %>
         				<b><%= place.comments.last.humanized_rating %></b> -
       				<% end %>
-      		
       				<%= place.comments.last.message %></div>
       			</blockquote>
-			</div>
-		<% end %>
-		</div>
-	
+      </div>
+    <% end %>
+    <% if place.photos.present? %>
+      <div class="col-xs-12">
+        <%= image_tag place.photos.last.picture %></b> -
+    <% end %>
+  </div>
 <% end %>
 
 <%-#Apple Store pagination style -%>
