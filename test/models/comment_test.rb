@@ -6,14 +6,13 @@ class CommentTest < ActiveSupport::TestCase
 #    end
 
   test "humanized_rating" do
-   	user = FactoryGirl.create(:user)
    	comment = FactoryGirl.create(:comment, :rating => '4_stars')
-   
+
 	expected = '4 stars' 
- 	actual = comment.rating.humanized_rating
+ 	actual = comment.humanized_rating
 
 	assert_equal expected, actual
-   	assert_redirected_to place_path
+   	
    end
-   
+
 end
