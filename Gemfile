@@ -33,6 +33,8 @@ gem 'jquery-rails'
 #psych gem update
 gem 'psych', '2.0.13'
 
+gem 'factory_girl_rails', '~> 4.0'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
 
