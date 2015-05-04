@@ -20,10 +20,10 @@ end
 FactoryGirl.define do
   factory :place do
     name "Charlie's noodles"
-    address "30 Main St."
+    address "350 Union St."
     description "delicious soups"
-    latitude(42.3631519)
-    longitude(-71.056098)
+    latitude(37.8010961)
+    longitude(-122.4051676)
     association :user
   end
 end

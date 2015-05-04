@@ -6,7 +6,9 @@
 	</div>
 
 	<div class="col-xs-8">
+		<% if false %>
 		<h1><%= @user.email %></h1>
+		<% end %>
 		<h1>Member since: <%= @user.created_at.strftime("%B %d, %Y") %></h1><br />
 		<h4>Has left <%= @user.comments.count %> comments</h4><br />
 		<h4>Has given <%= @user.comments.where(:rating => '5_stars').count %> total 5-star reviews</h4>

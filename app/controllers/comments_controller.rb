@@ -5,7 +5,16 @@ class CommentsController < ApplicationController
 		@place = Place.find(params[:place_id])
 		@place.comments.create(comment_params.merge(:user => current_user))
 		redirect_to place_path(@place)
+		if @place.comment.invalid?
+			flash[:error] = '<strong>Could not save</strong> the data you entered is invalid.'
+    	end
+    	if @place.comment.blank?
+    		render :text => "Not Found", :status => :not_found
+    	redirect_to root_path
+		end
 	end
+
+	
 
 	private
 

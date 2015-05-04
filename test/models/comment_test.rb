@@ -1,9 +1,6 @@
 require 'test_helper'
 
 class CommentTest < ActiveSupport::TestCase
-#    test "the truth" do
-#      assert false
-#    end
 
   test "humanized_rating" do
    	comment = FactoryGirl.create(:comment, :rating => '4_stars')

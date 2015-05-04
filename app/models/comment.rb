@@ -16,7 +16,7 @@ class Comment < ActiveRecord::Base
 		RATINGS.invert[self.rating]
 	end
 
-# #	def send_comment_email
+# 	def send_comment_email
 # 		NotificationMailer.comment_added(self).deliver
 # 	end
 end
